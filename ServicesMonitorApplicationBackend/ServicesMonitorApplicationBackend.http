@@ -1,0 +1,6 @@
+@ServicesMonitorApplicationBackend_HostAddress = http://localhost:5300
+
+GET {{ServicesMonitorApplicationBackend_HostAddress}}/home/
+Accept: application/json
+
+###

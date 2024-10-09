@@ -1,0 +1,18 @@
+Background:
+This was my first hands-on experience with Docker. After installing Docker Desktop on my laptop, I initially couldn't proceed with the example walkthrough in the app. I mistakenly thought the application wasn’t free to use. 
+However, I later realized I hadn’t verified my user email account. Once I verified it, I was able to continue without any issues.
+
+Findings:
+During the exercise, I gained a better understanding of Docker images, containers, and networks.
+
+- When writing the Dockerfile, I researched the base images for both Service1 (Node.js) and Service2 (.NET). For Node.js, I used node:lts-bullseye, as it is the latest long-term support version for Ubuntu. 
+For .NET, I referred to the official .NET website. I found the Dockerfile syntax quite straightforward: files and folders are copied to the working directory, except for build files and folders. 
+The RUN command is used for installing required packages and libraries, while the CMD command runs the actual applications.
+
+- Once the images were built, I was able to run the containers and successfully build the applications. However, the Service2 (.NET) application didn’t run correctly at first. 
+I discovered that the .NET images are based on Debian, not Ubuntu, so the "ps" command wasn’t available by default. To fix this, I added a RUN command to install procps in the Service2 (.NET) Dockerfile.
+
+-At this point, both services could be accessed via "curl" on their respective localhost ports. However, when Service1 (Node.js) tried to connect to Service2, there was a networking issue. 
+Initially, I tried sharing the network with the host machine, then created a Docker network for the two services. This was a step in the right direction, but it didn’t fully resolve the issue. 
+Eventually, I realized that instead of using localhost, I needed to use the service names (service1 and service2) within the network, which in my case resolved the issue (e.g., service1:8199 and service2:5300).
+

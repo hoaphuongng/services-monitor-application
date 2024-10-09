@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  service1:
+    image: service1:v1
+    container_name: service1
+    build:
+      context: ./ServicesMonitorApplicationNode/
+      dockerfile: dockerfile
+    networks:
+      - my-network
+    ports:
+      - "8199:8199"
+
+  service2:
+    image: service2:v1
+    container_name: service2
+    build:
+      context: ./ServicesMonitorApplicationBackend/
+      dockerfile: dockerfile
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

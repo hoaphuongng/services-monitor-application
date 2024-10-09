@@ -1,0 +1,13 @@
+docker container ls
+
+CONTAINER ID   IMAGE         COMMAND                  CREATED         STATUS         PORTS                    NAMES   
+ecbf91322c3b   service2:v1   "dotnet run"             3 minutes ago   Up 3 minutes   5300/tcp                 service2
+a2919991d32d   service1:v1   "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes   0.0.0.0:8199->8199/tcp   service1
+
+docker network ls  
+
+NETWORK ID     NAME                                    DRIVER    SCOPE
+b3432d5700e6   bridge                                  bridge    local
+80ee3e53ecb8   host                                    host      local
+5f9df5ec57d5   none                                    null      local
+6df8eb103908   servicesmonitorapplication_my-network   bridge    local

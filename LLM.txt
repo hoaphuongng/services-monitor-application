@@ -1,0 +1,20 @@
+The used LLM tool: ChatGPT
+
+Motivation/Reason to use LLM: 
+- Using LLM is way faster to search for the needed information such as system-related information or commands, sometimes, for resolving bugs. It includes everything at one place
+
+How and why LLM helped: 
+- LLM provides information for different commands in different operating systems. Instead of searching one by one on Google, I can ask ChatGPT and receive the answers of the commands faster and in well structured format.
+- LLM helps improve my writings 
+
+What kinds of mistakes LLM did: 
+- Failed to provide solutions when there is error connection between two services
+- When I searched for the Docker base image, ChatGPT failed to return it correctly. So I went to the official .Net website to check for the images with SDK
+
+What were things that LLM was not able to provide:
+- Failed to provide solutions when there is error connection
+- Failed to resolve the problem with missing 'ps'. I had to use console log to check for the OS name and found out the base image does not contain the 'ps' and researched the problem online
+
+Prompt I used to fetch the list of commands: Please list commands for fetching IP address, running processes, available disk space, time since last reboot in different OS in C# .NET and in NodeJS
+
+

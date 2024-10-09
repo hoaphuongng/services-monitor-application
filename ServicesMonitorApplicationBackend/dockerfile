@@ -1,0 +1,23 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0
+
+RUN apt-get update && apt-get install procps -y
+
+WORKDIR /app
+
+COPY ./Controllers/ ./Controllers
+
+COPY ./Models/ ./Models
+
+COPY ./Properties/ ./Properties
+
+COPY ./*.json .
+
+COPY ./*.cs* .
+
+COPY ./*.http .
+
+EXPOSE 5300
+
+CMD ["dotnet", "run"]
+
+
